@@ -1,0 +1,4 @@
+src is in src/views/displaymetadata.js file
+
+execute this command before uploading
+npm run build

@@ -1,0 +1,15 @@
+---
+declared-services:
+  speech-to-text-service-standard:
+    label: speech_to_text
+    plan: standard
+applications:
+- name: HelloBlueMixSrc
+  path: .
+  command: npm start
+  memory: 512M
+  services:
+  - Speech To Text-DT01
+  - Text to Speech-DT01
+  env:
+    NODE_ENV: production

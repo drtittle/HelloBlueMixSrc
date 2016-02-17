@@ -1,0 +1,227 @@
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="ct" content="<%= ct %>">
+    <title>Hello Bluemix</title>
+    <link href="css/watson-bootstrap-style.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <link rel="shortcut icon" href="images/favicon.ico" />
+  </head>
+  <body>
+    <!-- top nav section -->
+    <div class="navbar-wrapper">
+
+      <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+        <div class="container">
+          <!-- IBM Watson Logo -->
+          <div class="navbar-header">
+            <a class="navbar-brand no-underline" href="http://www.ibm.com/smarterplanet/us/en/ibmwatson/developercloud/"><span class="thin-branding">IBM</span> Watson Developer Cloud</a>
+          </div>
+          <div class="float-right">
+            <ul class="nav navbar-nav">
+              <li><a href="http://www.ibm.com/smarterplanet/us/en/ibmwatson/developercloud/services-catalog.html" class="no-underline">Services</a></li>
+              <li><a href="http://www.ibm.com/smarterplanet/us/en/ibmwatson/developercloud/doc/" class="no-underline">Docs</a></li>
+              <li><a href="http://www.ibm.com/smarterplanet/us/en/ibmwatson/developercloud/gallery.html" class="no-underline">App Gallery</a></li>
+              <li><a href="https://developer.ibm.com/watson/" class="no-underline">Community</a></li>
+            </ul>
+          </div><!-- .navbar right-->
+        </div><!-- .container -->
+      </div><!-- .navbar -->
+
+    </div><!-- .navbar-wrapper -->
+
+    <!-- Service Description Bar -->
+
+    <!-- Step 1 Section-->
+    <div class="container">
+      <!-- Step 3 Section-->
+      <!-- First column of inputs -->
+      <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12">
+          <h2>Hello Bluemix</h2>
+<!-- AddThis Button BEGIN -->
+<div class="addthis_toolbox addthis_default_style ">
+<a class="addthis_button_preferred_1"></a>
+<a class="addthis_button_preferred_2"></a>
+<a class="addthis_button_preferred_3"></a>
+<a class="addthis_button_preferred_4"></a>
+<a class="addthis_button_compact"></a>
+<a class="addthis_counter addthis_bubble_style"></a>
+</div>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-73376137-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid=ra-4e51a5651402d491"></script>
+<!-- AddThis Button END -->
+        </div><!-- .col-lg-12 -->
+
+        <div class="row">
+          <div class="col-lg-12 col-md-12 col-sm-12">
+            <div class="audioParent">
+              <audio style="display:none" class="audio" controls>
+                Your browser does not support the audio element.
+              </audio>
+            </div>
+          </div>
+        </div><!-- row -->
+
+        <div class="row">
+          <div class="col-lg-12 col-md-12 col-sm-12">
+            <div class="show_demos">
+            </div>
+          </div>
+        </div><!-- row -->
+
+        <div class="row">
+          <div class="col-lg-12 col-md-12 col-sm-12">
+            <div class="show_help">
+            </div>
+          </div>
+        </div><!-- row -->
+
+
+        <div class="row">
+          <nav class="navbar navbar-inverse">
+          <ul class="navbar-text">
+            <li id="recordButton" class="button-row nav-inverse-color">
+            <img id="microphoneIcon" src="images/microphone.svg" class="icon">
+            <span class="nav-label">Start Conversation</span>
+            </li>
+            <li id="play-sample-1" class="play-sample-1 button-row nav-inverse-color">
+            <img id="microphoneIcon" src="images/microphone.svg" class="icon">
+            <span class="nav-label">Play Intro</span>
+            </li>
+            <li id="show-help" class="show-help button-row nav-inverse-color">
+            <img id="microphoneIcon" src="images/microphone.svg" class="icon">
+            <span class="nav-label">Help</span>
+            </li>
+          </ul>
+
+          </nav>
+        </div>
+        <!-- Tab panes -->
+        <div class="row" style="  margin: 0;">
+          <div class="col-lg-12 col-md-12 col-sm-12" style="padding: 0;">
+            <div class="well">
+              <form autocomplete="off" class="form-horizontal">
+                <div role="tabpanel">
+                  <!-- Nav tabs -->
+                  <ul class="nav nav-tabs" role="tablist">
+                    <li role="presentation" class="active"><a href="#home2" aria-controls="home" role="tab" data-toggle="tab">Text</a></li>
+                    <li role="presentation"><a href="#profile2" aria-controls="profile" role="tab" data-toggle="tab">JSON</a></li>
+                  </ul>
+                  <div class="hr-tab"></div>
+                  <fieldset>
+                    <div class="row error-row">
+                      <div class="col-lg-12">
+                        <div id="errorAlert" >
+                          <span id="errorMessage"></span>
+                          <a class="pull-right" href="#" id="errorClose">&times;</a>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="row notification-row">
+                      <div class="col-lg-12">
+                        <div id="notificationAlert" >
+                          <span id="notificationMessage"></span>
+                          <a class="pull-right" href="#" id="notificationClose">&times;</a>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="form-group row tabpanel-row">
+                      <div class="col-lg-12">
+                        <div class="tab-content">
+                          <div role="tabpanel" class="tab-pane active" id="home2">
+                            <textarea readonly id="resultsText"></textarea>
+                          </div>
+                          <div role="tabpanel" class="tab-pane" id="profile2">
+                            <textarea readonly id="resultsJSON"></textarea>
+                          </div>
+                        </div>
+                      </div><!-- .col-lg-12 -->
+                    </div>
+                  </fieldset>
+                </div>
+              </form>
+            </div>
+          </div><!-- /.well -->
+        </div><!-- /.tabpanel -->
+
+      </div><!-- /.container -->
+
+      <!-- for file upload dialog in toolbar -->
+      <input style="display:none" type="file" id="fileUploadDialog">
+
+<!-- CAMERA CODE 
+  <div class="container">
+        <div id="supported">
+        <div class="row">
+            <div class="col-md-*">
+                <h1>Take a picture...</h1>
+            </div>
+
+        </div>
+
+        <div class="row">
+            <div class="col-md-4">
+                <video id="video"></video>
+            </div>
+
+            <div class="col-md-8">
+
+                <img src="" id="photo" class="img-rounded" alt="your picture here..." />
+                <blockquote id="msg" style="display:none;">
+                    <p class="text-primary">Right click on the image and save to your computer!</p>
+                </blockquote>
+                --  <button id="savebutton" class="btn btn-primary" >Save Photo</button> --
+            </div>
+
+        </div>
+
+        <div class="row">
+            <div class="col-md-3">
+
+                <button id="startbutton" class="btn btn-primary">Take photo</button>
+
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6">
+                <canvas id="canvas" style="display:none;"></canvas>
+
+            </div>
+        </div>
+        </div>
+        
+        <div class="jumbotron" id="notSupported">
+            <h3>Ooops, your browser doesn't support WebRTC :(</h3>
+            <p>Please try in Google Chrome, Mozilla Firefox or Opera!</p>
+        </div>
+       
+        <div class="jumbotron" id="cancelled">
+            <h3>Aaah, you should have clicked 'ALLOW' !!!</h3>
+            <p>Please click Allow button on the notification under address bar!</p>
+        </div>
+      </div>
+-->
+      <!-- Place js files at the end of the document, with fallbacks for CDNs -->
+      <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+      <script type="text/javascript" src="https://rawgithub.com/thorst/jquery-idletimer/master/dist/idle-timer.js"></script>
+      <script src="js/index.js"></script>
+      <script src="js/constants.js"></script>
+      <script src="js/demo.js"></script>
+      <!-- <script src="js/camera.js"></script>-->
+  </body>
+</html>
