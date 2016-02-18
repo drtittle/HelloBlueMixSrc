@@ -36,7 +36,7 @@ $(document).bind("active.idleTimer", function ()
 {
     // function you want to fire when the user becomes active again
     console.log("User Active");
-    //playText("Hi Kevin. Would you like to Chat?");
+    //playText("Hi David. Would you like to Chat?");
 });
 
 var scrolled = false, textScrolled = false;
@@ -284,6 +284,7 @@ function translateText(textContent, source, target, callback)
 
 
 /* KAD */
+var name = "I didn't catch your name.";
 var collectSymptoms = false;
 var symptoms = [];
 var phrases = ["Help me",
@@ -307,7 +308,11 @@ var phrases = ["Help me",
                "Insurance example",
                "Do you speak French",
                "Do you speak Spanish",
-               "Do you speak English"];
+               "Do you speak English",
+               "Goodbye",
+               "Gun",
+               "Firearm",
+               "Pizza"];
 
 exports.showResult = function (msg, baseString, model)
 {
@@ -356,7 +361,7 @@ exports.showResult = function (msg, baseString, model)
 
             if (text.indexOf("Say hi") >= 0)
             {
-                playText("Hi everybody. I am Bluemix.... Welcome to our demo today.  Hope you find it engaging.  Feel free to ask Kevin any questions during his presentation");
+                playText("Hi everybody. I am Watson running on Bluemix.... Welcome to our demo today.  Feel free to ask David any questions during his presentation");
             }
             else if ((text.indexOf("Hello") >= 0 || text.indexOf("Hi") >= 0) && text.length < 30)
             {
@@ -369,7 +374,8 @@ exports.showResult = function (msg, baseString, model)
             else if (text.indexOf("My name is") >= 0 || text.indexOf("My name's") >= 0)
             {
                 console.log(text.trim().lastIndexOf(" "));
-                var name = text.trim().substring(text.trim().lastIndexOf(" "));
+                // var name = text.trim().substring(text.trim().lastIndexOf(" "));
+                name = text.trim().substring(text.trim().lastIndexOf(" "));
                 console.log(name);
                 playText("Nice to meet you " + name);
             }
@@ -452,7 +458,7 @@ exports.showResult = function (msg, baseString, model)
             }
             else if (text.indexOf("What do you do") >= 0 || text.indexOf("What are you") >= 0)
             {
-                playText("I am an open standards cloud platform to build cool applications");
+                playText("I am an open standards cloud platform to build and cool applications");
             }
             else if (text.indexOf("Is that fun") >= 0 || text.indexOf("Is it fun") >= 0)
             {
@@ -510,7 +516,7 @@ exports.showResult = function (msg, baseString, model)
             {
                 playText(getDate());
             }
-            else if (text === "Is it cold outside. ")
+            else if (text === "Is it cold outside.  Really. ")
             {
                 playText("Yes It is 50 degrees");
             }
@@ -526,10 +532,37 @@ exports.showResult = function (msg, baseString, model)
             {
                 playText("Your welcome");
             }
-            else if (text === "Goodbye. ")
+            else if (text === "Goodbye. " || text === "Bye")
             {
-                playText("Hope to hear from you soon");
+            	if(name !== undefined && name !== null)
+                	playText("Hope to hear from you soon" + name);
+                else
+                	layText("Hope to hear from you soon");
             }
+            else if (text === "Gun. " ||
+            		 text.indexOf("Gun ") >= 0 ||
+            		 text.indexOf("Gunn ") >= 0 ||
+            		 text === "Firearm. " ||
+            		 text === "Firearm " ||
+            		 text.indexOf("Firearm ") >= 0 ||
+            		 text.indexOf("Fire arm ") >= 0 ||
+            		 text.indexOf("Boom ") >= 0 ||
+            		 text.indexOf("Bank ") >= 0)
+            {
+            	// NOTES FOR PATRICK:
+            	//   While this is a canned statement, you would do something here like read a database to get 
+            	//   the 3 parameters that you're looking for to formulate your answer.
+                playText("Bearing in mind that Use, not design, determines whether or not an object is dangerous, if a person chooses a gun can definitely be used against you in a dangerous way and you may not be able to stop it. ");
+            }
+            else if (text === "Pizza. " || text.indexOf("Pizza ") >= 0)
+            {
+            	// NOTES FOR PATRICK:
+            	//   While this is a canned statement, you would do something here like read a database to get 
+            	//   the 3 parameters that you're looking for to formulate your answer.
+                playText("Pizza is food and is generally considered delicious.  It is unlikely that pizza is dangerous, unless you eat too much of it!  It can be used against you in a dangerous way if you are dieting and you may not be able to stop your urges to eat it. ");
+            }
+ 
+            
             else if (text.indexOf("plus") >= 0)
             {
                 playText(mathResult(text, "plus") + "");
@@ -598,7 +631,20 @@ exports.showResult = function (msg, baseString, model)
 
 function analyzeSymptoms(symptomsArray)
 {
-    return (".....It sounds like you have a common cold. Take 2 aspirin and get rest");
+	console.log(symptomsArray);
+	
+	var symptomString = "It sounds like you said, ";
+    for (var z = 0; z < symptomsArray.length; z++)
+    	symptomString += symptomsArray[z];
+	
+	symptomString += " okay, let me look up some information regarding your sysmptoms."
+	
+	// RIGHT HERE
+	
+	
+	return(symptomString);
+	
+    //return (".....It sounds like you have a common cold. Take 2 aspirin and get rest");
 }
 
 function mathResult(text, type)
